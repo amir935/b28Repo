@@ -4,7 +4,9 @@ agent any
 stages {
      stage('Build Application'){
           steps{
-                  bat 'mvn clean'
+                 withMaven(maven: 'maven-3.8.2', credentialsId: 'd297e15f-eaa9-4c90-847a-c3c82a1d1bd2') {
+                    sh 'mvn clean '
+                }
         }
      }
  
